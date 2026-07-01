@@ -1,12 +1,22 @@
+/* ========================================================================
+   CapyPress - Zrealizowany Arkusz Stylów (Dark Mode + Profesjonalny Turkus)
+   ======================================================================== */
 
 :root {
     --bg-dark: #121212;
     --card-bg-dark: #1e1e1e;
     --text-light: #e0e0e0;
     --text-grey: #a0a0a0;
-    --accent-lime: #39ff14; /* Główny kolor tekstu, przycisków */
-    --accent-turkis: #00bcd4; /* Kolor akcentów, ikon */
     --border-color: #333;
+
+    /* ZMIANA KOLORU: Zastąpiono jaskrawy neon nowym, technologicznym turkusem (cyjanem) */
+    --accent-tech-cyan: #00bcd4; /* Główny kolor akcentu: przyciski, obramowania, linki */
+
+    /* Kolory pomocnicze */
+    --secondary-accent-green: #32cd32; /* Delikatny zielony akcent, np. dla wersji */
+    --buy-coffee-gold: #ffdd00;
+
+    /* Typografia */
     --font-heading: 'Inter', sans-serif;
     --font-body: 'Inter', sans-serif;
     --font-code: 'Fira Code', monospace;
@@ -24,11 +34,12 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 ul {
@@ -48,9 +59,11 @@ ul {
     align-items: center;
 }
 
-/* Nagłówek */
+/* ==============================
+   Nagłówek (Header)
+   ============================== */
 .header {
-    padding: 20px 0;
+    padding: 25px 0;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--bg-dark);
     position: sticky;
@@ -77,14 +90,15 @@ ul {
 
 .logo-text {
     font-weight: 700;
-    font-size: 1.3em;
+    font-size: 1.4em;
     color: #fff;
+    letter-spacing: -0.5px;
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 30px;
 }
 
 .nav-menu a {
@@ -93,95 +107,112 @@ ul {
     font-size: 0.95em;
 }
 
+/* ZMIANA STYLU: Hover nawigacji używa nowego turkusu */
 .nav-menu a:hover {
-    color: var(--accent-lime);
+    color: var(--accent-tech-cyan);
 }
 
 .nav-support {
-    padding: 8px 16px;
-    border: 1px solid var(--accent-lime);
+    padding: 10px 20px;
+    border: 1px solid var(--accent-tech-cyan); /* Obramowanie w kolorze cyjan */
     border-radius: 6px;
-    color: var(--accent-lime) !important;
+    color: var(--accent-tech-cyan) !important;
+    font-weight: 600;
 }
 
 .nav-support:hover {
-    background-color: var(--accent-lime);
+    background-color: var(--accent-tech-cyan);
     color: #000 !important;
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.2);
 }
 
-/* Hero Section */
+/* ==============================
+   Sekcja Hero
+   ============================== */
 .hero {
-    padding: 100px 0;
+    padding: 120px 0;
     background: radial-gradient(circle at 50% -20%, #222 0%, var(--bg-dark) 70%);
+    text-align: left;
 }
 
 .tagline-tech {
     font-family: var(--font-code);
-    font-size: 0.8em;
-    color: var(--accent-turkis);
+    font-size: 0.85em;
+    color: var(--accent-tech-cyan); /* Używa cyjanu */
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     margin-bottom: 15px;
     display: block;
+    opacity: 0.9;
 }
 
 .hero h1 {
-    font-size: 3.5em;
-    font-weight: 700;
-    line-height: 1.1;
+    font-size: 4em;
+    font-weight: 800;
+    line-height: 1.05;
     margin-bottom: 20px;
+    letter-spacing: -1px;
 }
 
 .hero h1 .highlight {
-    color: var(--accent-lime);
+    color: var(--accent-tech-cyan); /* Używa cyjanu */
     position: relative;
     display: inline-block;
 }
 
+/* ZMIANA STYLU: Podkreślenie tytułu w kolorze cyjan */
 .hero h1 .highlight::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 5px;
+    bottom: 8px;
     width: 100%;
-    height: 3px;
-    background-color: var(--accent-turkis);
-    opacity: 0.5;
+    height: 4px;
+    background-color: var(--accent-tech-cyan);
+    opacity: 0.6;
+    border-radius: 2px;
 }
 
 .hero p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: var(--text-grey);
-    margin-bottom: 30px;
-    max-width: 580px;
+    margin-bottom: 40px;
+    max-width: 650px;
 }
 
 .hero-cta {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
+/* ZMIANA STYLU: Główny przycisk w kolorze cyjan */
 .btn-primary {
-    padding: 16px 32px;
-    background-color: var(--accent-lime);
+    padding: 18px 36px;
+    background-color: var(--accent-tech-cyan);
     color: #000;
     font-weight: 700;
     font-size: 1.1em;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.3); /* Cień pasujący do cyjanu */
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
-    background-color: #2ecc71;
-    box-shadow: 0 6px 20px rgba(57, 255, 20, 0.5);
-    transform: translateY(-2px);
+    background-color: #0097a7; /* Ciemniejszy odcień cyjan na hover */
+    box-shadow: 0 8px 25px rgba(0, 188, 212, 0.5);
+    transform: translateY(-3px);
 }
 
+/* Subtelny zielony akcent dla odznaki wersji */
 .version-badge {
     font-family: var(--font-code);
-    font-size: 0.9em;
-    color: var(--text-grey);
+    font-size: 0.95em;
+    color: var(--secondary-accent-green); /* Delikatny zielony */
+    background-color: rgba(50, 205, 50, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
 }
 
 .hero-visual {
@@ -191,36 +222,44 @@ ul {
 
 .code-block-display {
     background-color: var(--card-bg-dark);
-    padding: 25px;
-    border-radius: 12px;
+    padding: 30px;
+    border-radius: 16px;
     border: 1px solid var(--border-color);
     font-family: var(--font-code);
-    font-size: 0.9em;
+    font-size: 0.95em;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 550px;
+    overflow-x: auto;
 }
 
 .code-block-display pre {
-    overflow-x: auto;
+    white-space: pre-wrap;
 }
 
 .code-block-display code {
     color: var(--text-light);
 }
 
-.code-block-display .keyword { color: #ff79c6; }
-.code-block-display .function { color: #50fa7b; }
-.code-block-display .string { color: #f1fa8c; }
+/* Kolory składni kodu (pozostają czytelne) */
+.code-block-display .keyword { color: #ff79c6; } /* Róż */
+.code-block-display .function { color: #50fa7b; } /* Jasny zieleń */
+.code-block-display .string { color: #f1fa8c; }  /* Żółty */
+.code-block-display .comment { color: var(--text-grey); font-style: italic; }
 
-/* Sekcja Funkcje */
+/* ==============================
+   Sekcja Funkcje (Features)
+   ============================== */
 .features {
-    padding: 100px 0;
+    padding: 120px 0;
     background-color: var(--bg-dark);
 }
 
 .features h2 {
     text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 60px;
+    font-size: 3em;
+    margin-bottom: 80px;
+    letter-spacing: -1px;
 }
 
 .features-grid {
@@ -231,153 +270,32 @@ ul {
 
 .card-feature {
     background-color: var(--card-bg-dark);
-    padding: 40px;
-    border-radius: 12px;
+    padding: 50px;
+    border-radius: 16px;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
+/* ZMIANA STYLU: Hover karty używa nowego cyjanu */
 .card-feature:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-lime);
+    transform: translateY(-10px);
+    border-color: var(--accent-tech-cyan);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .card-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 20px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 30px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left center;
 }
 
-/* Zastąp ścieżkami do własnych ikon (SVG/PNG), jeśli chcesz użyć tych z wizualizacji */
-.icon-python { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%2300bcd4"><path d="M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm19.6 29.1c2.8 0 5.1 2.3 5.1 5.1 0 2.8-2.3 5.1-5.1 5.1H65v6.5c0 4.2-3.4 7.6-7.6 7.6H47v7.6c0 4.2-3.4 7.6-7.6 7.6h-7.7c-2.8 0-5.1-2.3-5.1-5.1 0-2.8 2.3-5.1 5.1-5.1h7.7v-7.6c0-4.2 3.4-7.6 7.6-7.6h10.4v-6.5c0-4.2 3.4-7.6 7.6-7.6h4.2zm-24.6 1.3cJako model językowy nie potrafię Ci w tym pomóc.
+/* Definicje ikon - używają koloru cyjan */
 .icon-python { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%2300bcd4"><path d="M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm19.6 29.1c2.8 0 5.1 2.3 5.1 5.1 0 2.8-2.3 5.1-5.1 5.1H65v6.5c0 4.2-3.4 7.6-7.6 7.6H47v7.6c0 4.2-3.4 7.6-7.6 7.6h-7.7c-2.8 0-5.1-2.3-5.1-5.1 0-2.8 2.3-5.1 5.1-5.1h7.7v-7.6c0-4.2 3.4-7.6 7.6-7.6h10.4v-6.5c0-4.2 3.4-7.6 7.6-7.6h4.2zm-24.6 1.3c-2.8 0-5.1 2.3-5.1 5.1 0 2.8 2.3 5.1 5.1 5.1H35v6.5c0 4.2-3.4 7.6-7.6 7.6H16v7.6c0 4.2-3.4 7.6-7.6 7.6H0v-7.7c0-4.2 3.4-7.6 7.6-7.6h7.7v-7.6c0-4.2 3.4-7.6 7.6-7.6h10.4v-6.5c0-4.2 3.4-7.6 7.6-7.6h4.2zm24.5 43.6c2.8 0 5.1 2.3 5.1 5.1 0 2.8-2.3 5.1-5.1 5.1H65v6.5c0 4.2-3.4 7.6-7.6 7.6H47v7.6c0 4.2-3.4 7.6-7.6 7.6h-7.7c-2.8 0-5.1-2.3-5.1-5.1 0-2.8 2.3-5.1 5.1-5.1h7.7v-7.6c0-4.2 3.4-7.6 7.6-7.6h10.4v-6.5c0-4.2 3.4-7.6 7.6-7.6h4.2zm-24.6 1.3c-2.8 0-5.1 2.3-5.1 5.1 0 2.8 2.3 5.1 5.1 5.1H35v6.5c0 4.2-3.4 7.6-7.6 7.6H16v7.6c0 4.2-3.4 7.6-7.6 7.6H0V84.8c0-4.2 3.4-7.6 7.6-7.6h7.7v-7.6c0-4.2 3.4-7.6 7.6-7.6h10.4v-6.5c0-4.2 3.4-7.6 7.6-7.6h4.2z"/></svg>'); }
-.icon-installer { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2300bcd4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'); }
-.icon-minimal { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2300bcd4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>'); }
-
-.card-feature h3 {
-    margin-top: 0;
-    color: #fff;
-    font-size: 1.4em;
-    margin-bottom: 10px;
-}
-
-.card-feature p {
-    color: var(--text-grey);
-    font-size: 1em;
-}
-
-/* Sekcja Call to Action Finalna */
-.cta-final {
-    padding: 100px 0;
-    background-color: var(--card-bg-dark);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    text-align: center;
-}
-
-.cta-content-box {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.cta-content-box h2 {
-    font-size: 2.8em;
-    margin-bottom: 20px;
-}
-
-.cta-content-box p {
-    color: var(--text-grey);
-    font-size: 1.2em;
-    margin-bottom: 40px;
-}
-
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn-secondary {
-    padding: 16px 32px;
-    background-color: transparent;
-    color: var(--accent-turkis);
-    border: 1px solid var(--accent-turkis);
-    font-weight: 600;
-    font-size: 1.1em;
-    border-radius: 8px;
-}
-
-.btn-secondary:hover {
-    background-color: var(--accent-turkis);
-    color: #000;
-}
-
-/* Stopka */
-.footer {
-    padding: 60px 0;
-    background-color: var(--bg-dark);
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.footer-brand {
-    max-width: 400px;
-}
-
-.footer-brand p {
-    color: var(--text-grey);
-    font-size: 0.9em;
-    margin-top: 15px;
-}
-
-.footer-logo-area {
-    margin-bottom: 10px;
-}
-
-.logo-img-sm {
-    width: 30px;
-}
-
-.logo-text-sm {
-    font-size: 1.1em;
-    color: #fff;
-}
-
-.buy-coffee-area {
-    text-align: right;
-}
-
-.buy-coffee-area p {
-    color: var(--text-grey);
-    font-size: 0.9em;
-    margin-bottom: 8px;
-}
-
-.buy-coffee-btn img {
-    height: 40px;
-    width: auto;
-}
-
-/* Responsywność - Tablety i mniejsze ekrany */
-@media (max-width: 992px) {
-    .hero h1 { font-size: 2.8em; }
-    .grid-2 { grid-template-columns: 1fr; text-align: center; }
-    .hero-content { display: flex; flex-direction: column; align-items: center; }
-    .features-grid { grid-template-columns: 1fr; }
-    .hero-visual { display: none; /* Ukryj kod na mniejszych ekranach, żeby nie zasłaniać */ }
-    .footer-content { flex-direction: column; gap: 40px; text-align: center; }
-    .buy-coffee-area { text-align: center; width: 100%; }
-    .footer-brand { margin: 0 auto; }
-}
-
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2em; }
-    .nav-menu { display: none; /* Chowamy menu na mobile, można dodać hamburger */ }
-}  
+.icon-installer { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2300bcd4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'); }
+.icon-minimal { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2300bcd4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg
