@@ -1,0 +1,24 @@
+[project]
+name = "capypress"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+dependencies = [
+    "Django>=5.2",
+    "psycopg[binary]",
+    "gunicorn",
+    "redis",
+    "celery",
+    "structlog",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.black]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.12"
+strict = true

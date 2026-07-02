@@ -1,0 +1,18 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: capypress
+      POSTGRES_USER: capypress
+      POSTGRES_PASSWORD: capypress
+
+  redis:
+    image: redis:7
